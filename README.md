@@ -10,13 +10,13 @@ Next the community collectively spent a good number of years ensuring that the J
 
 So in my mind, the idea of creating native binaries (or images as we are currently calling them) which are platform specific is, at least in one respect, coming full circle.  Nowadays you might already be running such an application in a container on an orchestration platform...or planning to do so.
 
-But, I digress.  This little project, which I imagine will relatively soon have little to no value, was created to serve as an example of moving from familiar Java byte-code to a native executable.  I believe its value will quickly diminish because of the quality and development speed of the GraalVM in general.  I believe I first heard about the GraalVM at a JavaOne but have not, until recently, had a real need to leverage it in production.  I think my timing, albeit lucky, is actually pretty good because I am find it quite usable at least for the use cases before me.
+But, I digress.  This little project, which I imagine will relatively soon have little to no value, was created to serve as an example of moving from familiar Java byte-code to a native executable.  I believe its value will quickly diminish because of the quality and development speed of the GraalVM in general.  I believe I first heard about the GraalVM at a JavaOne but have not, until recently, had a real need to leverage it in production.  I think my timing, albeit lucky, is actually pretty good because I am finding it quite usable at least for the use cases before me.
 
 ## Setup
 
 Given that this project leverages the GraalVM (Java 11), along with the native-image component, this is probably a good time to download both from [the Github project](https://github.com/graalvm/graalvm-ce-builds/releases) if you don't already have them installed for your platform.
 
-I tend to keep a good number of JVM's on any machine I use on a regular basis with any one of them configured as current depending on my needs.  Ensureing that the JAVA_HOME environment variable is set to the GraalVM and that $JAVA_HOME/bin in on the PATH (before any other Java) is important.  I am assuming knowledge of such a configuration.
+I tend to keep a good number of JVM's on any machine I use on a regular basis with any one of them configured as current depending on my needs.  Ensuring that the JAVA_HOME environment variable is set to the GraalVM and that $JAVA_HOME/bin in on the PATH (before any other Java) is important.  I am assuming knowledge of such a configuration.
 
 With the GraalVM installed, the next step is to install the native-image component.  This can be done with the following command:
 
