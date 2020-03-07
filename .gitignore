@@ -36,3 +36,7 @@ rebel.xml
 *.log*
 
 .DS_Store
+
+hello-world-2/config/*json
+
+**/dependency-reduced-pom.xml
