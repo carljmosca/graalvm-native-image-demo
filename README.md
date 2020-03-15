@@ -33,7 +33,7 @@ gu install -L NAME_OF_DOWNLOADED_native-image_JAR_FILE (e.g. native-image-instal
 
 I have experience with the GraalVM on Linux and the MacOS but I have read nothing that makes me believe there might be issues doing so on Windows.  The project is also Maven-based so if you're not using Maven from your favorite IDE or via the command line, you'll want to download and install Maven as well.
 
-## Part 1
+## Hello World Part 1
 
 The Hello World project is a relatively simple Java application which was designed to run from the command line as a standalone jar file requiring Java to be available.  Change into the **hello-world** diectory.
 
@@ -71,7 +71,7 @@ If this worked as is, and I suspect it will before too much longer, we could sto
 
 Specifically, the process of creating a native image is not completely working with classes which do not include a "no args" constructor.
 
-## Part 2
+## Hello World Part 2
 
 Assuming you're still in the **hello-world** directory, the command below will get you to the next step
 
@@ -103,4 +103,44 @@ Now that we have the files, we can make a second attempt at creating a native im
 mvn clean install -Pnative-image
 ```
 
-org.osgi.framework.FrameworkUtil
+Running the resulting native image can be done with this command:
+
+```
+target/helloworld
+```
+
+The program seems to run OK, but there are warnings:
+
+```
+log4j:WARN No such property [conversionPattern] in org.apache.log4j.PatternLayout.
+log4j:WARN No such property [file] in org.apache.log4j.RollingFileAppender.
+log4j:WARN No such property [append] in org.apache.log4j.RollingFileAppender.
+log4j:WARN No such property [maxFileSize] in org.apache.log4j.RollingFileAppender.
+log4j:WARN No such property [maxBackupIndex] in org.apache.log4j.RollingFileAppender.
+log4j:WARN File option not set for appender [logfile].
+log4j:WARN Are you using FileAppender instead of ConsoleAppender?
+log4j:ERROR No output stream or file set for the appender named [logfile].
+```
+
+## Hello World Part 3
+
+Moving on to part 3, sssuming you're still in the **hello-world-2** directory, the command below will get you to the next step
+
+```
+cd ../hello-world-3
+```
+
+Although the output from the native-image-agent which can be found in the config directory in part 2 is very good, it had to be manually
+tweaked a bit in order to get rid of the warnings we saw when running the native-image.
+
+Build the native image by using the native-image profile.
+
+```
+mvn clean install -Pnative-image
+```
+
+Run the native image again:
+
+```
+target/helloworld
+```
