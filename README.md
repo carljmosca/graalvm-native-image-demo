@@ -93,7 +93,9 @@ If that was successful, we should have a jar file which we can run, along with t
 java -agentlib:native-image-agent=config-output-dir=config -jar target/hello-world-1.0.jar
 ```
 
-After running the application and agent, there should be some files of interest created in the config directory.  These files are the **reflect-config.json** and the **resource-config.json**.  As you might imagine, they will assist the native-image build process with reflection, used to determine which classes are included and how, along with which resources are to be added to the image.  For more details on the files, see the above 
+After running the application and agent, there should be some files of interest created in the config directory.  These files are the **reflect-config.json** and the **resource-config.json**.  As you might imagine, they will assist the native-image build process with reflection, used to determine which classes are included and how, along with which resources are to be added to the image.  For more details on the files, see the above.
+
+In order to get the native-image maven plugin to respect these files we add two parameters to the **buildArgs** tag which are: -H:ReflectionConfigurationFiles=../config/reflect-config.json -H:ResourceConfigurationFiles=../config/resource-config.json
 
 Now that we have the files, we can make a second attempt at creating a native image for our platform of choice.  This time, we'll use the maven command below to select the native image profile.
 
@@ -101,3 +103,4 @@ Now that we have the files, we can make a second attempt at creating a native im
 mvn clean install -Pnative-image
 ```
 
+org.osgi.framework.FrameworkUtil

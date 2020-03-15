@@ -8,12 +8,12 @@ package com.carljmosca.hello.world.service;
 import com.carljmosca.hello.world.model.Widget;
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class WidgetService {
     
-    private static final Logger LOGGER = LogManager.getLogger("WidgetService.class");
+    private static final Logger LOGGER = LoggerFactory.getLogger("WidgetService.class");
     private static final int WIDGETS = 10;
     private final List<Widget> widgets;
     
