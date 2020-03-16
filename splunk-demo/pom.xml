@@ -20,16 +20,6 @@
     </repositories>
     <dependencies>
         <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>${log4j2.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j2.version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.splunk.logging</groupId>
             <artifactId>splunk-library-javalogging</artifactId>
             <version>1.8.0</version>
@@ -74,7 +64,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <imageName>helloworld</imageName>
+                    <imageName>splunkdemo</imageName>
                     <buildArgs>--no-fallback com.carljmosca.hello.world.App</buildArgs>
                 </configuration>
             </plugin>

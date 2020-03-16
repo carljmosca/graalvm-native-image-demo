@@ -6,16 +6,16 @@
 package com.carljmosca.hello.world;
 
 import com.carljmosca.hello.world.service.WidgetService;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class App {
     
-    private static final Logger LOGGER = LogManager.getLogger(App.class);
-    
+    private final static Logger LOGGER = Logger.getLogger(App.class.getName());
+     
     public static void main(String[] args) {
-        LOGGER.info("HelloWorld");
+        LOGGER.log(Level.INFO, "HelloWorld");
         WidgetService widgetService = new WidgetService();
         widgetService.create();
         widgetService.display();
