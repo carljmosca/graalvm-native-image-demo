@@ -28,6 +28,11 @@
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
         </dependency> 
+        <dependency>
+            <groupId>com.splunk.logging</groupId>
+            <artifactId>splunk-library-javalogging</artifactId>
+            <version>1.6.2</version>
+        </dependency>
     </dependencies>
     <profiles>
         <profile>
